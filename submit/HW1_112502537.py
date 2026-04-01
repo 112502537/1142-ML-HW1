@@ -34,7 +34,7 @@ def filter_and_analyze_data(df):
     """任務三與五：篩選資料與統計"""
 
     # TODO 3.1: 找出數學成績 < 60 的學生
-    math_failed = df['數學'] < 60
+    math_failed = df[df['數學'] < 60]
 
     # TODO 3.2: 找出班級為 'A' 且英文 > 90 的學生
     high_A = df[(df['班級'] == 'A')&(df['英文'] > 90)]
@@ -78,7 +78,7 @@ def save_results(df, output_file_path):
 
     # TODO 6.1: 儲存 CSV，避免中文亂碼
     # Hint: df.to_csv(...)
-    df.to_csv('/workspaces/1142-ML-HW1/grades_analyzed.csv', encoding='utf-8-sig', index=False)
+    df.to_csv('grades_analyzed.csv', encoding='utf-8-sig', index=False)
 
 
 
